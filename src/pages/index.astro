@@ -1,0 +1,110 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PillarCard from '../components/PillarCard.astro';
+---
+
+<BaseLayout title="Launch Baseball | Build Better Hitters">
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <p class="eyebrow">Hitting Development</p>
+        <h1>Build Better <span>Hitters.</span></h1>
+        <p class="lead">
+          Learn the five movement principles we use to evaluate and develop hitters.
+          No secrets. No gimmicks. No locked course.
+        </p>
+        <div class="actions">
+          <a class="button button-primary" href="#pillars">Explore the Five Pillars</a>
+          <a class="button button-secondary" href="#assessment">Schedule an Assessment</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="philosophy" id="philosophy">
+      <div class="container">
+        <p class="eyebrow">Our Philosophy</p>
+        <h2>We do not sell secrets.</h2>
+        <p>
+          Read it here. Search it online. Teach it yourself. Work with another coach.
+          The information is free. Coaching is knowing what applies to one hitter,
+          what matters most, and how to create lasting change.
+        </p>
+        <blockquote>The principles are free. The evaluation is personal.</blockquote>
+      </div>
+    </section>
+
+    <section class="pillars" id="pillars">
+      <div class="container">
+        <p class="eyebrow">The Framework</p>
+        <h2>The Five Pillars</h2>
+        <div class="grid">
+          <PillarCard number="01" title="Load" />
+          <PillarCard number="02" title="Balance" />
+          <PillarCard number="03" title="Firing Sequence" />
+          <PillarCard number="04" title="Barrel Path" />
+          <PillarCard number="05" title="Adjustability" />
+        </div>
+      </div>
+    </section>
+
+    <section class="assessment" id="assessment">
+      <div class="container">
+        <p class="eyebrow">Personal Coaching</p>
+        <h2>Know what your hitter actually needs.</h2>
+        <p>
+          For a one-on-one assessment or to work with a trained coach,
+          contact Launch Baseball.
+        </p>
+        <a class="button button-primary"
+           href="mailto:info@launchbaseball.net?subject=Launch Baseball Assessment">
+          Request an Assessment
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <style>
+    section { padding:6rem 0; }
+    .hero {
+      min-height:calc(100vh - 72px); display:grid; align-items:center;
+      background:
+        radial-gradient(circle at 78% 35%, rgba(214,40,40,.25), transparent 28%),
+        linear-gradient(135deg,#07111f 0%,#0c2647 64%,#07111f 100%);
+    }
+    .hero-inner { max-width:850px; }
+    h1 {
+      margin:.8rem 0 1.4rem; font-size:clamp(3.6rem,9vw,7.8rem);
+      text-transform:uppercase; letter-spacing:-.055em;
+    }
+    h1 span { display:block; color:transparent; -webkit-text-stroke:2px white; }
+    .lead { max-width:720px; color:#d5dce4; font-size:clamp(1.05rem,2vw,1.3rem); }
+    .actions { display:flex; flex-wrap:wrap; gap:.8rem; margin-top:2rem; }
+
+    .philosophy { background:var(--white); color:var(--navy); }
+    h2 { margin:.7rem 0 1.2rem; font-size:clamp(2.5rem,6vw,4.8rem); text-transform:uppercase; }
+    .philosophy p:not(.eyebrow) { max-width:780px; color:#4d5b69; font-size:1.1rem; }
+    blockquote {
+      max-width:900px; margin:2.5rem 0 0; padding-left:1.4rem;
+      border-left:5px solid var(--red); font-size:clamp(1.5rem,3vw,2.4rem);
+      font-weight:950; line-height:1.2;
+    }
+
+    .pillars { background:#0a203b; }
+    .grid {
+      display:grid; grid-template-columns:repeat(5,1fr);
+      gap:.8rem; margin-top:2.5rem;
+    }
+
+    .assessment { text-align:center; }
+    .assessment p:not(.eyebrow) {
+      max-width:700px; margin:0 auto 1.8rem; color:var(--gray); font-size:1.08rem;
+    }
+
+    @media (max-width:950px) { .grid { grid-template-columns:repeat(2,1fr); } }
+    @media (max-width:600px) {
+      section { padding:4.5rem 0; }
+      .grid { grid-template-columns:1fr; }
+      .actions .button { width:100%; }
+    }
+  </style>
+</BaseLayout>

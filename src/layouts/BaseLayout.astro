@@ -1,0 +1,99 @@
+---
+const {
+  title = 'Launch Baseball',
+  description = 'A clear hitting-development framework built around five essential pillars.'
+} = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#07111f" />
+    <title>{title}</title>
+    <link rel="icon" href="/favicon.svg" />
+    <style is:global>
+      :root {
+        --navy:#07111f;
+        --navy-2:#0c2647;
+        --red:#d62828;
+        --white:#fff;
+        --gray:#aeb9c6;
+        --light:#f4f6f8;
+      }
+      * { box-sizing:border-box; }
+      html { scroll-behavior:smooth; }
+      body {
+        margin:0;
+        font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background:var(--navy);
+        color:var(--white);
+        line-height:1.55;
+      }
+      a { color:inherit; }
+      .container { width:min(1120px, 90%); margin-inline:auto; }
+      .button {
+        display:inline-flex; align-items:center; justify-content:center;
+        padding:.95rem 1.35rem; border-radius:.45rem;
+        text-decoration:none; text-transform:uppercase;
+        font-size:.82rem; font-weight:900; letter-spacing:.06em;
+      }
+      .button-primary { background:var(--red); }
+      .button-secondary { border:1px solid rgba(255,255,255,.42); }
+      .eyebrow {
+        color:var(--red); text-transform:uppercase;
+        letter-spacing:.18em; font-weight:900; font-size:.78rem;
+      }
+      h1,h2,h3 { line-height:1; }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="/">Launch <span>Baseball</span></a>
+        <nav aria-label="Primary">
+          <a href="/#pillars">Five Pillars</a>
+          <a href="/#philosophy">Philosophy</a>
+          <a href="/#assessment">Assessment</a>
+        </nav>
+      </div>
+    </header>
+
+    <slot />
+
+    <footer>
+      <div class="container footer-inner">
+        <span>© 2026 Launch Baseball</span>
+        <span>LaunchBaseball.net</span>
+      </div>
+    </footer>
+
+    <style>
+      .site-header {
+        position:sticky; top:0; z-index:20;
+        background:rgba(7,17,31,.92);
+        border-bottom:1px solid rgba(255,255,255,.08);
+        backdrop-filter:blur(12px);
+      }
+      .nav {
+        min-height:72px; display:flex; align-items:center;
+        justify-content:space-between; gap:2rem;
+      }
+      .brand {
+        text-decoration:none; text-transform:uppercase;
+        font-weight:950; letter-spacing:.08em;
+      }
+      .brand span { color:var(--red); }
+      nav { display:flex; gap:1.4rem; }
+      nav a {
+        color:var(--gray); text-decoration:none;
+        font-size:.9rem; font-weight:800;
+      }
+      nav a:hover { color:var(--white); }
+      footer { background:#030912; color:#84909c; padding:1.6rem 0; }
+      .footer-inner { display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap; }
+      @media (max-width:700px) { nav { display:none; } }
+    </style>
+  </body>
+</html>

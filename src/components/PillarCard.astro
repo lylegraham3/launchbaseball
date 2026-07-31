@@ -1,0 +1,22 @@
+---
+const { number, title, href = '#' } = Astro.props;
+---
+<a class="card" href={href}>
+  <span>{number}</span>
+  <h3>{title}</h3>
+  <b>Explore →</b>
+</a>
+
+<style>
+  .card {
+    min-height:230px; padding:1.45rem;
+    display:flex; flex-direction:column; justify-content:space-between;
+    border:1px solid rgba(255,255,255,.13);
+    background:rgba(255,255,255,.035);
+    text-decoration:none; transition:.2s ease;
+  }
+  .card:hover { transform:translateY(-5px); background:rgba(255,255,255,.075); }
+  span { color:var(--red); font-weight:950; letter-spacing:.14em; }
+  h3 { margin:0; font-size:1.45rem; text-transform:uppercase; }
+  b { color:var(--gray); font-size:.84rem; }
+</style>
