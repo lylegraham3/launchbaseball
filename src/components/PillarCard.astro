@@ -1,22 +1,80 @@
 ---
-const { number, title, href = '#' } = Astro.props;
+const { number, title, kicker, href = '#' } = Astro.props;
 ---
 <a class="card" href={href}>
-  <span>{number}</span>
-  <h3>{title}</h3>
-  <b>Explore →</b>
+  <div class="top">
+    <span class="number">{number}</span>
+    <span class="arrow">↗</span>
+  </div>
+  <div>
+    <p>{kicker}</p>
+    <h3>{title}</h3>
+  </div>
 </a>
 
 <style>
   .card {
-    min-height:230px; padding:1.45rem;
-    display:flex; flex-direction:column; justify-content:space-between;
-    border:1px solid rgba(255,255,255,.13);
-    background:rgba(255,255,255,.035);
-    text-decoration:none; transition:.2s ease;
+    min-height: 260px;
+    padding: 1.45rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid rgba(255,255,255,.12);
+    background:
+      linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.018));
+    text-decoration: none;
+    transition: transform .22s ease, background .22s ease, border-color .22s ease;
+    overflow: hidden;
+    position: relative;
   }
-  .card:hover { transform:translateY(-5px); background:rgba(255,255,255,.075); }
-  span { color:var(--red); font-weight:950; letter-spacing:.14em; }
-  h3 { margin:0; font-size:1.45rem; text-transform:uppercase; }
-  b { color:var(--gray); font-size:.84rem; }
+
+  .card::after {
+    content: "";
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    right: -80px;
+    bottom: -90px;
+    border: 1px solid rgba(214,40,40,.38);
+    border-radius: 50%;
+  }
+
+  .card:hover {
+    transform: translateY(-6px);
+    background: linear-gradient(180deg, rgba(255,255,255,.075), rgba(255,255,255,.03));
+    border-color: rgba(214,40,40,.62);
+  }
+
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .number {
+    color: var(--red);
+    font-weight: 950;
+    letter-spacing: .14em;
+  }
+
+  .arrow {
+    color: #c9d1da;
+    font-size: 1.25rem;
+  }
+
+  p {
+    margin: 0 0 .55rem;
+    color: var(--gray);
+    font-size: .76rem;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    font-weight: 850;
+  }
+
+  h3 {
+    margin: 0;
+    font-size: 1.55rem;
+    text-transform: uppercase;
+    max-width: 8ch;
+  }
 </style>

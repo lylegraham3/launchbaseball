@@ -1,7 +1,7 @@
 ---
 const {
   title = 'Launch Baseball',
-  description = 'A clear hitting-development framework built around five essential pillars.'
+  description = 'Free hitting education built around five essential movement pillars, plus personalized player assessment and coaching.'
 } = Astro.props;
 ---
 <!doctype html>
@@ -10,52 +10,83 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#07111f" />
+    <meta name="theme-color" content="#06111f" />
     <title>{title}</title>
     <link rel="icon" href="/favicon.svg" />
+
     <style is:global>
       :root {
-        --navy:#07111f;
-        --navy-2:#0c2647;
-        --red:#d62828;
-        --white:#fff;
-        --gray:#aeb9c6;
-        --light:#f4f6f8;
+        --navy: #06111f;
+        --navy-2: #0b2340;
+        --navy-3: #12365f;
+        --red: #d62828;
+        --white: #ffffff;
+        --gray: #a9b5c3;
+        --light: #f4f6f8;
+        --line: rgba(255,255,255,.12);
       }
-      * { box-sizing:border-box; }
-      html { scroll-behavior:smooth; }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
       body {
-        margin:0;
-        font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        background:var(--navy);
-        color:var(--white);
-        line-height:1.55;
+        margin: 0;
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: var(--navy);
+        color: var(--white);
+        line-height: 1.55;
       }
-      a { color:inherit; }
-      .container { width:min(1120px, 90%); margin-inline:auto; }
-      .button {
-        display:inline-flex; align-items:center; justify-content:center;
-        padding:.95rem 1.35rem; border-radius:.45rem;
-        text-decoration:none; text-transform:uppercase;
-        font-size:.82rem; font-weight:900; letter-spacing:.06em;
-      }
-      .button-primary { background:var(--red); }
-      .button-secondary { border:1px solid rgba(255,255,255,.42); }
+
+      a { color: inherit; }
+      img { max-width: 100%; display: block; }
+      .container { width: min(1180px, 90%); margin-inline: auto; }
+
       .eyebrow {
-        color:var(--red); text-transform:uppercase;
-        letter-spacing:.18em; font-weight:900; font-size:.78rem;
+        margin: 0 0 .8rem;
+        color: var(--red);
+        text-transform: uppercase;
+        letter-spacing: .18em;
+        font-weight: 950;
+        font-size: .76rem;
       }
-      h1,h2,h3 { line-height:1; }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: .55rem;
+        padding: 1rem 1.35rem;
+        border-radius: .38rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: .8rem;
+        font-weight: 950;
+        letter-spacing: .065em;
+        transition: transform .2s ease, background .2s ease, border-color .2s ease;
+      }
+
+      .button:hover { transform: translateY(-2px); }
+      .button-primary { background: var(--red); color: var(--white); }
+      .button-primary:hover { background: #b91f1f; }
+      .button-secondary { border: 1px solid rgba(255,255,255,.42); }
+      .button-secondary:hover { background: rgba(255,255,255,.07); }
+
+      h1, h2, h3 { line-height: .98; }
     </style>
   </head>
+
   <body>
     <header class="site-header">
       <div class="container nav">
-        <a class="brand" href="/">Launch <span>Baseball</span></a>
+        <a class="brand" href="/" aria-label="Launch Baseball home">
+          <span class="brand-mark">L</span>
+          <span class="brand-text">Launch <b>Baseball</b></span>
+        </a>
+
         <nav aria-label="Primary">
           <a href="/#pillars">Five Pillars</a>
           <a href="/#philosophy">Philosophy</a>
           <a href="/#assessment">Assessment</a>
+          <a class="nav-cta" href="mailto:info@launchbaseball.net?subject=Launch Baseball Assessment">Contact</a>
         </nav>
       </div>
     </header>
@@ -64,36 +95,114 @@ const {
 
     <footer>
       <div class="container footer-inner">
-        <span>© 2026 Launch Baseball</span>
-        <span>LaunchBaseball.net</span>
+        <div>
+          <strong>Launch Baseball</strong>
+          <span>Better movement. Better decisions. Better hitters.</span>
+        </div>
+        <div class="footer-right">
+          <a href="mailto:info@launchbaseball.net">info@launchbaseball.net</a>
+          <span>© 2026 Launch Baseball</span>
+        </div>
       </div>
     </footer>
 
     <style>
       .site-header {
-        position:sticky; top:0; z-index:20;
-        background:rgba(7,17,31,.92);
-        border-bottom:1px solid rgba(255,255,255,.08);
-        backdrop-filter:blur(12px);
+        position: sticky;
+        top: 0;
+        z-index: 30;
+        background: rgba(6,17,31,.84);
+        border-bottom: 1px solid var(--line);
+        backdrop-filter: blur(16px);
       }
+
       .nav {
-        min-height:72px; display:flex; align-items:center;
-        justify-content:space-between; gap:2rem;
+        min-height: 76px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
       }
+
       .brand {
-        text-decoration:none; text-transform:uppercase;
-        font-weight:950; letter-spacing:.08em;
+        display: inline-flex;
+        align-items: center;
+        gap: .75rem;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 950;
+        letter-spacing: .075em;
       }
-      .brand span { color:var(--red); }
-      nav { display:flex; gap:1.4rem; }
+
+      .brand-mark {
+        display: grid;
+        place-items: center;
+        width: 34px;
+        height: 34px;
+        background: var(--red);
+        color: white;
+        transform: skew(-9deg);
+        font-style: italic;
+      }
+
+      .brand-text b { color: var(--red); }
+
+      nav {
+        display: flex;
+        align-items: center;
+        gap: 1.35rem;
+      }
+
       nav a {
-        color:var(--gray); text-decoration:none;
-        font-size:.9rem; font-weight:800;
+        color: var(--gray);
+        text-decoration: none;
+        font-size: .88rem;
+        font-weight: 850;
       }
-      nav a:hover { color:var(--white); }
-      footer { background:#030912; color:#84909c; padding:1.6rem 0; }
-      .footer-inner { display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap; }
-      @media (max-width:700px) { nav { display:none; } }
+
+      nav a:hover { color: var(--white); }
+
+      .nav-cta {
+        padding: .7rem .95rem;
+        border: 1px solid rgba(255,255,255,.28);
+        border-radius: .35rem;
+      }
+
+      footer {
+        background: #02070d;
+        border-top: 1px solid var(--line);
+        padding: 2rem 0;
+        color: #82909f;
+      }
+
+      .footer-inner {
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem;
+        flex-wrap: wrap;
+      }
+
+      footer strong {
+        display: block;
+        color: var(--white);
+        text-transform: uppercase;
+        letter-spacing: .08em;
+        margin-bottom: .25rem;
+      }
+
+      .footer-right {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: .25rem;
+      }
+
+      .footer-right a { text-decoration: none; }
+
+      @media (max-width: 760px) {
+        nav { display: none; }
+        .footer-right { align-items: flex-start; }
+      }
     </style>
   </body>
 </html>

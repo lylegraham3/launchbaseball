@@ -6,57 +6,138 @@ import PillarCard from '../components/PillarCard.astro';
 <BaseLayout title="Launch Baseball | Build Better Hitters">
   <main>
     <section class="hero">
+      <div class="hero-grid"></div>
+      <div class="orb orb-one"></div>
+      <div class="orb orb-two"></div>
+
       <div class="container hero-inner">
-        <p class="eyebrow">Hitting Development</p>
-        <h1>Build Better <span>Hitters.</span></h1>
-        <p class="lead">
-          Learn the five movement principles we use to evaluate and develop hitters.
-          No secrets. No gimmicks. No locked course.
-        </p>
-        <div class="actions">
-          <a class="button button-primary" href="#pillars">Explore the Five Pillars</a>
-          <a class="button button-secondary" href="#assessment">Schedule an Assessment</a>
+        <div class="hero-copy">
+          <p class="eyebrow">Hitting Development Without the Mystery</p>
+
+          <h1>
+            Build Better
+            <span>Hitters.</span>
+          </h1>
+
+          <p class="lead">
+            Learn the five movement principles we use to evaluate and develop hitters.
+            No secrets. No gimmicks. No locked course.
+          </p>
+
+          <div class="actions">
+            <a class="button button-primary" href="#pillars">Explore the Five Pillars</a>
+            <a class="button button-secondary" href="#assessment">Schedule an Assessment</a>
+          </div>
         </div>
+
+        <aside class="hero-panel">
+          <span class="panel-label">Launch Framework</span>
+          <div class="panel-stat">
+            <strong>5</strong>
+            <span>Core Pillars</span>
+          </div>
+          <div class="panel-line"></div>
+          <p>
+            Different styles. Shared movement principles.
+            One clear way to evaluate the swing.
+          </p>
+        </aside>
+      </div>
+
+      <div class="scroll-cue">Scroll to learn ↓</div>
+    </section>
+
+    <section class="marquee" aria-label="Launch Baseball principles">
+      <div class="marquee-track">
+        <span>Load</span><i>•</i>
+        <span>Balance</span><i>•</i>
+        <span>Firing Sequence</span><i>•</i>
+        <span>Barrel Path</span><i>•</i>
+        <span>Adjustability</span><i>•</i>
+        <span>Load</span><i>•</i>
+        <span>Balance</span><i>•</i>
+        <span>Firing Sequence</span><i>•</i>
+        <span>Barrel Path</span><i>•</i>
+        <span>Adjustability</span><i>•</i>
       </div>
     </section>
 
     <section class="philosophy" id="philosophy">
-      <div class="container">
-        <p class="eyebrow">Our Philosophy</p>
-        <h2>We do not sell secrets.</h2>
-        <p>
-          Read it here. Search it online. Teach it yourself. Work with another coach.
-          The information is free. Coaching is knowing what applies to one hitter,
-          what matters most, and how to create lasting change.
-        </p>
-        <blockquote>The principles are free. The evaluation is personal.</blockquote>
+      <div class="container philosophy-grid">
+        <div>
+          <p class="eyebrow">Our Philosophy</p>
+          <h2>We do not sell secrets.</h2>
+        </div>
+
+        <div class="philosophy-copy">
+          <p>
+            Read it here. Search it online. Teach it yourself. Work with another coach.
+            The information is free.
+          </p>
+          <p>
+            Coaching is knowing what applies to one hitter, what matters most,
+            and how to create lasting change.
+          </p>
+          <blockquote>
+            The principles are free.<br />
+            The evaluation is personal.
+          </blockquote>
+        </div>
       </div>
     </section>
 
     <section class="pillars" id="pillars">
       <div class="container">
-        <p class="eyebrow">The Framework</p>
-        <h2>The Five Pillars</h2>
-        <div class="grid">
-          <PillarCard number="01" title="Load" />
-          <PillarCard number="02" title="Balance" />
-          <PillarCard number="03" title="Firing Sequence" />
-          <PillarCard number="04" title="Barrel Path" />
-          <PillarCard number="05" title="Adjustability" />
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">The Framework</p>
+            <h2>The Five Pillars</h2>
+          </div>
+          <p>
+            Successful hitters do not all look the same.
+            They do, however, tend to solve the same movement problems.
+          </p>
+        </div>
+
+        <div class="pillar-grid">
+          <PillarCard number="01" title="Load" kicker="Prepare to move" />
+          <PillarCard number="02" title="Balance" kicker="Control the body" />
+          <PillarCard number="03" title="Firing Sequence" kicker="Create efficient force" />
+          <PillarCard number="04" title="Barrel Path" kicker="Deliver the barrel" />
+          <PillarCard number="05" title="Adjustability" kicker="Handle changing pitches" />
+        </div>
+      </div>
+    </section>
+
+    <section class="truth">
+      <div class="container truth-grid">
+        <div class="truth-number">01</div>
+        <div>
+          <p class="eyebrow">The Real Value of Coaching</p>
+          <h2>Information is easy.<br />Diagnosis is hard.</h2>
+        </div>
+        <div class="truth-copy">
+          <p>
+            A parent can find thousands of drills online. The difficult part is knowing
+            which movement is actually limiting the hitter, what to address first,
+            and when to stop changing things.
+          </p>
         </div>
       </div>
     </section>
 
     <section class="assessment" id="assessment">
-      <div class="container">
-        <p class="eyebrow">Personal Coaching</p>
+      <div class="assessment-grid"></div>
+      <div class="container assessment-inner">
+        <p class="eyebrow">One-on-One Assessment</p>
         <h2>Know what your hitter actually needs.</h2>
         <p>
-          For a one-on-one assessment or to work with a trained coach,
+          For a personal assessment or to work with a trained coach,
           contact Launch Baseball.
         </p>
-        <a class="button button-primary"
-           href="mailto:info@launchbaseball.net?subject=Launch Baseball Assessment">
+        <a
+          class="button button-primary"
+          href="mailto:info@launchbaseball.net?subject=Launch Baseball Assessment">
           Request an Assessment
         </a>
       </div>
@@ -64,47 +145,340 @@ import PillarCard from '../components/PillarCard.astro';
   </main>
 
   <style>
-    section { padding:6rem 0; }
+    section { position: relative; }
+
     .hero {
-      min-height:calc(100vh - 72px); display:grid; align-items:center;
+      min-height: calc(100vh - 76px);
+      display: grid;
+      align-items: center;
+      overflow: hidden;
       background:
-        radial-gradient(circle at 78% 35%, rgba(214,40,40,.25), transparent 28%),
-        linear-gradient(135deg,#07111f 0%,#0c2647 64%,#07111f 100%);
+        radial-gradient(circle at 74% 32%, rgba(214,40,40,.22), transparent 25%),
+        linear-gradient(135deg, #06111f 0%, #0a2442 58%, #06111f 100%);
     }
-    .hero-inner { max-width:850px; }
+
+    .hero-grid,
+    .assessment-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size: 58px 58px;
+      mask-image: linear-gradient(to bottom, black, transparent 82%);
+      pointer-events: none;
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.12);
+      pointer-events: none;
+    }
+
+    .orb-one {
+      width: 520px;
+      height: 520px;
+      right: -170px;
+      top: -180px;
+    }
+
+    .orb-two {
+      width: 220px;
+      height: 220px;
+      right: 18%;
+      bottom: 8%;
+      border-color: rgba(214,40,40,.28);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 280px;
+      gap: 4rem;
+      align-items: end;
+      padding: 7rem 0 6rem;
+    }
+
     h1 {
-      margin:.8rem 0 1.4rem; font-size:clamp(3.6rem,9vw,7.8rem);
-      text-transform:uppercase; letter-spacing:-.055em;
+      margin: .65rem 0 1.45rem;
+      font-size: clamp(4rem, 9.5vw, 8.4rem);
+      text-transform: uppercase;
+      letter-spacing: -.06em;
+      max-width: 8ch;
     }
-    h1 span { display:block; color:transparent; -webkit-text-stroke:2px white; }
-    .lead { max-width:720px; color:#d5dce4; font-size:clamp(1.05rem,2vw,1.3rem); }
-    .actions { display:flex; flex-wrap:wrap; gap:.8rem; margin-top:2rem; }
 
-    .philosophy { background:var(--white); color:var(--navy); }
-    h2 { margin:.7rem 0 1.2rem; font-size:clamp(2.5rem,6vw,4.8rem); text-transform:uppercase; }
-    .philosophy p:not(.eyebrow) { max-width:780px; color:#4d5b69; font-size:1.1rem; }
+    h1 span {
+      display: block;
+      color: transparent;
+      -webkit-text-stroke: 2px white;
+    }
+
+    .lead {
+      max-width: 700px;
+      color: #d5dde5;
+      font-size: clamp(1.05rem, 2vw, 1.28rem);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .8rem;
+      margin-top: 2rem;
+    }
+
+    .hero-panel {
+      border: 1px solid rgba(255,255,255,.15);
+      background: rgba(5,15,27,.48);
+      backdrop-filter: blur(10px);
+      padding: 1.5rem;
+    }
+
+    .panel-label {
+      color: var(--red);
+      text-transform: uppercase;
+      font-size: .72rem;
+      letter-spacing: .15em;
+      font-weight: 950;
+    }
+
+    .panel-stat {
+      display: flex;
+      align-items: baseline;
+      gap: .85rem;
+      margin-top: 1rem;
+    }
+
+    .panel-stat strong {
+      font-size: 4.4rem;
+      line-height: 1;
+    }
+
+    .panel-stat span {
+      color: var(--gray);
+      font-weight: 850;
+      text-transform: uppercase;
+      font-size: .78rem;
+      letter-spacing: .08em;
+    }
+
+    .panel-line {
+      height: 1px;
+      background: rgba(255,255,255,.14);
+      margin: 1.1rem 0;
+    }
+
+    .hero-panel p {
+      margin: 0;
+      color: #c4ced8;
+      font-size: .95rem;
+    }
+
+    .scroll-cue {
+      position: absolute;
+      left: 5%;
+      bottom: 1.25rem;
+      color: #8190a0;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-size: .68rem;
+      font-weight: 850;
+    }
+
+    .marquee {
+      overflow: hidden;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: #040b13;
+    }
+
+    .marquee-track {
+      width: max-content;
+      display: flex;
+      gap: 1.4rem;
+      align-items: center;
+      padding: 1.1rem 0;
+      animation: move 25s linear infinite;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-weight: 950;
+      color: #c4cdd6;
+    }
+
+    .marquee-track i {
+      color: var(--red);
+      font-style: normal;
+    }
+
+    @keyframes move {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    .philosophy {
+      padding: 7rem 0;
+      background: var(--white);
+      color: var(--navy);
+    }
+
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 5rem;
+    }
+
+    h2 {
+      margin: .6rem 0 0;
+      font-size: clamp(2.9rem, 6vw, 5.4rem);
+      text-transform: uppercase;
+      letter-spacing: -.04em;
+    }
+
+    .philosophy-copy > p {
+      max-width: 700px;
+      color: #4d5a68;
+      font-size: 1.1rem;
+    }
+
     blockquote {
-      max-width:900px; margin:2.5rem 0 0; padding-left:1.4rem;
-      border-left:5px solid var(--red); font-size:clamp(1.5rem,3vw,2.4rem);
-      font-weight:950; line-height:1.2;
+      margin: 2.4rem 0 0;
+      padding-left: 1.35rem;
+      border-left: 5px solid var(--red);
+      font-size: clamp(1.6rem, 3vw, 2.45rem);
+      font-weight: 950;
+      line-height: 1.18;
     }
 
-    .pillars { background:#0a203b; }
-    .grid {
-      display:grid; grid-template-columns:repeat(5,1fr);
-      gap:.8rem; margin-top:2.5rem;
+    .pillars {
+      padding: 7rem 0;
+      background: #09213d;
     }
 
-    .assessment { text-align:center; }
+    .section-head {
+      display: grid;
+      grid-template-columns: 1fr .8fr;
+      gap: 3rem;
+      align-items: end;
+    }
+
+    .section-head > p {
+      color: var(--gray);
+      max-width: 520px;
+      justify-self: end;
+      margin: 0;
+      font-size: 1.05rem;
+    }
+
+    .pillar-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: .85rem;
+      margin-top: 3rem;
+    }
+
+    .truth {
+      padding: 6rem 0;
+      background: var(--light);
+      color: var(--navy);
+    }
+
+    .truth-grid {
+      display: grid;
+      grid-template-columns: 90px 1fr .8fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    .truth-number {
+      font-size: 4.5rem;
+      font-weight: 950;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(6,17,31,.28);
+    }
+
+    .truth h2 {
+      font-size: clamp(2.5rem, 5vw, 4.6rem);
+    }
+
+    .truth-copy {
+      color: #4d5a68;
+      font-size: 1.08rem;
+      padding-top: 2rem;
+    }
+
+    .assessment {
+      padding: 7rem 0;
+      overflow: hidden;
+      text-align: center;
+      background:
+        radial-gradient(circle at 50% 15%, rgba(214,40,40,.22), transparent 28%),
+        linear-gradient(135deg, #071525, #0b2645);
+    }
+
+    .assessment-inner {
+      position: relative;
+      z-index: 2;
+    }
+
+    .assessment h2 {
+      max-width: 900px;
+      margin-inline: auto;
+    }
+
     .assessment p:not(.eyebrow) {
-      max-width:700px; margin:0 auto 1.8rem; color:var(--gray); font-size:1.08rem;
+      max-width: 680px;
+      margin: 1.4rem auto 2rem;
+      color: var(--gray);
+      font-size: 1.08rem;
     }
 
-    @media (max-width:950px) { .grid { grid-template-columns:repeat(2,1fr); } }
-    @media (max-width:600px) {
-      section { padding:4.5rem 0; }
-      .grid { grid-template-columns:1fr; }
-      .actions .button { width:100%; }
+    @media (max-width: 1000px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        align-items: start;
+      }
+
+      .hero-panel {
+        max-width: 420px;
+      }
+
+      .pillar-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .hero-inner {
+        padding: 5rem 0 4rem;
+      }
+
+      .philosophy-grid,
+      .section-head,
+      .truth-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .section-head > p {
+        justify-self: start;
+      }
+
+      .pillar-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .actions .button {
+        width: 100%;
+      }
+
+      .scroll-cue {
+        display: none;
+      }
+
+      .truth-copy {
+        padding-top: 0;
+      }
     }
   </style>
 </BaseLayout>
