@@ -1,4 +1,232 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
-<BaseLayout title="About | Launch Baseball"><main><section class="hero"><div class="container"><p class="eyebrow">Why I coach</p><h1>I don't need this.<br/>I love this.</h1></div></section><section class="paper"><div class="container copy"><p class="lead">I coach because I love watching the moment a player understands something they could not see five minutes earlier.</p><p>I was a smaller, weaker, younger player. Without a strong foundation, I could never have competed as far as I did.</p><p>Years later, I watched players reach high school without the basic principles they needed. Launch Baseball exists to organize those principles, explain why they matter, and give players the tools to continue improving.</p><p>The goal is not to make a player dependent on endless lessons. The goal is to help the player understand the game well enough to keep moving forward.</p><a class="text-link" href="/learn">Start with the foundation →</a></div></section></main><style>.hero{padding:8rem 0 7rem;background:radial-gradient(circle at 78% 25%,rgba(211,41,47,.23),transparent 28%),linear-gradient(135deg,var(--navy),var(--navy2))}.hero h1{margin:.5rem 0 0;font-size:clamp(4rem,9vw,8rem);text-transform:uppercase}.paper{padding:7rem 0;background:var(--paper);color:var(--ink)}.copy{max-width:780px}.copy p{font-size:1.15rem;color:#46525d}.copy .lead{font-size:clamp(1.8rem,3.5vw,3rem);color:var(--ink);font-weight:900;line-height:1.12}</style></BaseLayout>
+<BaseLayout title="About Launch Baseball">
+  <main>
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">About Launch Baseball</p>
+        <h1>Built around understanding.</h1>
+        <p class="hero-copy">
+          Launch Baseball was built by coaches who share one belief:
+          every player deserves to understand what they're doing and why they're doing it.
+        </p>
+      </div>
+    </section>
+
+    <section class="story">
+      <div class="container story-grid">
+        <div>
+          <p class="eyebrow">Why Launch Exists</p>
+          <h2>Principles should be taught clearly.</h2>
+        </div>
+        <div>
+          <p>
+            Successful players develop different styles, but the underlying movement principles remain remarkably consistent.
+          </p>
+          <p>
+            Launch Baseball organizes those principles into a system players can understand, coaches can teach, and parents can follow.
+          </p>
+          <p>
+            The goal is not to create players who depend on constant instruction. The goal is to create players who understand the game well enough to keep improving.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="founders">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Meet the Founders</p>
+            <h2>The people behind Launch.</h2>
+          </div>
+          <p>
+            Different areas of focus. One shared foundation.
+          </p>
+        </div>
+
+        <div class="founder-grid">
+          <a class="founder-card" href="/about/graham-lyle">
+            <span class="card-number">01</span>
+            <div>
+              <h3>Graham Lyle</h3>
+              <p class="role">Co-Founder</p>
+              <p class="label">Areas of Focus</p>
+              <p>Hitting • Middle Infield</p>
+            </div>
+            <span class="arrow">Read Graham's story →</span>
+          </a>
+
+          <article class="founder-card">
+            <span class="card-number">02</span>
+            <div>
+              <h3>Brian Johnson</h3>
+              <p class="role">Co-Founder</p>
+              <p class="label">Areas of Focus</p>
+              <p>Pitching • Hitting</p>
+            </div>
+            <span class="arrow muted">Coach profile coming soon.</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="standard">
+      <div class="container">
+        <p class="eyebrow">The Launch Standard</p>
+        <h2>What players and parents can expect from us.</h2>
+
+        <div class="standard-grid">
+          <p>We teach understanding before repetition.</p>
+          <p>We teach principles before positions.</p>
+          <p>We teach causes before byproducts.</p>
+          <p>We explain the purpose behind what we teach.</p>
+          <p>We coach toward independence, not dependence.</p>
+          <p>We treat every player with honesty and respect.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <style>
+    .hero {
+      padding: 8rem 0 7rem;
+      background:
+        radial-gradient(circle at 78% 25%, rgba(211,41,47,.23), transparent 28%),
+        linear-gradient(135deg, var(--navy), var(--navy-2));
+    }
+    h1 {
+      margin: .5rem 0 1.25rem;
+      max-width: 10ch;
+      font-size: clamp(4rem, 9vw, 8rem);
+      text-transform: uppercase;
+    }
+    .hero-copy {
+      max-width: 760px;
+      color: #bdc8d2;
+      font-size: 1.2rem;
+    }
+    .story {
+      padding: 7rem 0;
+      background: var(--paper);
+      color: var(--ink);
+    }
+    .story-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 5rem;
+    }
+    h2 {
+      margin: .4rem 0 0;
+      font-size: clamp(2.8rem, 5vw, 5rem);
+      text-transform: uppercase;
+    }
+    .story-grid > div:last-child p {
+      color: #46525d;
+      font-size: 1.1rem;
+    }
+    .founders {
+      padding: 7rem 0;
+      background: #0a213b;
+    }
+    .section-head {
+      display: grid;
+      grid-template-columns: 1fr .65fr;
+      gap: 3rem;
+      align-items: end;
+    }
+    .section-head > p {
+      color: #9eabb7;
+      font-size: 1.05rem;
+    }
+    .founder-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+    .founder-card {
+      min-height: 330px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.025);
+      transition: transform .2s ease, border-color .2s ease, background .2s ease;
+    }
+    a.founder-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(211,41,47,.7);
+      background: rgba(255,255,255,.05);
+    }
+    .card-number {
+      color: var(--red);
+      font-weight: 950;
+      letter-spacing: .12em;
+    }
+    .founder-card h3 {
+      margin: 0 0 .3rem;
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      text-transform: uppercase;
+    }
+    .role {
+      margin: 0 0 2rem;
+      color: #9ba8b4;
+      text-transform: uppercase;
+      font-size: .76rem;
+      font-weight: 900;
+      letter-spacing: .12em;
+    }
+    .label {
+      margin-bottom: .35rem;
+      color: var(--red);
+      text-transform: uppercase;
+      font-size: .7rem;
+      font-weight: 950;
+      letter-spacing: .12em;
+    }
+    .founder-card p:last-child {
+      margin-top: 0;
+      color: #d6dee6;
+    }
+    .arrow {
+      color: #c2ccd5;
+      font-size: .82rem;
+      font-weight: 850;
+    }
+    .muted { color: #788897; }
+    .standard {
+      padding: 7rem 0;
+      background: #f0eee7;
+      color: var(--ink);
+    }
+    .standard h2 {
+      max-width: 900px;
+    }
+    .standard-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+    .standard-grid p {
+      margin: 0;
+      padding: 1.25rem;
+      border-left: 4px solid var(--red);
+      background: white;
+      font-weight: 850;
+    }
+    @media (max-width: 760px) {
+      .story-grid,
+      .section-head,
+      .founder-grid,
+      .standard-grid {
+        grid-template-columns: 1fr;
+      }
+      .story-grid { gap: 2rem; }
+    }
+  </style>
+</BaseLayout>

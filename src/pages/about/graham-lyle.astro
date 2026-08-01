@@ -1,0 +1,168 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Graham Lyle | Launch Baseball">
+  <main>
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">Co-Founder</p>
+        <h1>Graham Lyle</h1>
+        <p class="focus">Hitting • Middle Infield</p>
+      </div>
+    </section>
+
+    <section class="paper">
+      <div class="container profile-grid">
+        <article>
+          <p class="eyebrow">Why I Coach</p>
+
+          <p class="lead">
+            My first season coaching high school baseball changed the way I looked at hitting.
+          </p>
+
+          <p>I expected to teach effort.</p>
+
+          <p>I expected to teach competition.</p>
+
+          <p>I expected to help players improve.</p>
+
+          <p>What I didn't expect was how differently players had been taught.</p>
+
+          <p>Some had a strong foundation.</p>
+
+          <p>Some had almost no foundation at all.</p>
+
+          <p>Others had spent years trying to build on ideas that simply weren't helping them.</p>
+
+          <p>I realized the biggest gap wasn't effort.</p>
+
+          <p><strong>It was understanding.</strong></p>
+
+          <p>That's when Launch Baseball began.</p>
+
+          <p>
+            I wanted to build a system that organized the movement principles shared by successful hitters into something players could understand, coaches could teach, and parents could follow.
+          </p>
+
+          <p>
+            Because every player deserves to understand what they're doing and why they're doing it.
+          </p>
+
+          <hr />
+
+          <h2>What I Believe</h2>
+
+          <p>
+            I don't believe every player should look the same. I do believe successful hitters share common movement principles.
+          </p>
+
+          <p>
+            My job is not to make every player copy someone else's swing. My job is to help each player understand those principles and apply them to their own game.
+          </p>
+
+          <h2>My Goal</h2>
+
+          <p>
+            I don't want players to depend on me. I want them to leave every lesson understanding their swing better than when they arrived.
+          </p>
+
+          <p><strong>Understanding creates independence.</strong></p>
+        </article>
+
+        <aside>
+          <p class="aside-label">Areas of Focus</p>
+          <p>Hitting</p>
+          <p>Middle Infield</p>
+
+          <div class="quote">
+            Every player deserves to understand what they're doing and why they're doing it.
+          </div>
+
+          <a class="text-link" href="/assessment">Book a Launch Assessment →</a>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <style>
+    .hero {
+      padding: 8rem 0 6rem;
+      background:
+        radial-gradient(circle at 78% 25%, rgba(211,41,47,.23), transparent 28%),
+        linear-gradient(135deg, var(--navy), var(--navy-2));
+    }
+    h1 {
+      margin: .4rem 0 .7rem;
+      font-size: clamp(4rem, 10vw, 8rem);
+      text-transform: uppercase;
+    }
+    .focus {
+      color: #bcc7d1;
+      text-transform: uppercase;
+      font-weight: 900;
+      letter-spacing: .1em;
+    }
+    .paper {
+      padding: 7rem 0;
+      background: var(--paper);
+      color: var(--ink);
+    }
+    .profile-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 310px;
+      gap: 5rem;
+      align-items: start;
+    }
+    article {
+      max-width: 760px;
+    }
+    article p {
+      color: #46525d;
+      font-size: 1.1rem;
+    }
+    article .lead {
+      color: var(--ink);
+      font-size: clamp(1.8rem, 3.5vw, 3rem);
+      font-weight: 900;
+      line-height: 1.12;
+    }
+    article strong { color: var(--ink); }
+    article hr {
+      margin: 4rem 0;
+      border: 0;
+      border-top: 1px solid var(--paper-line);
+    }
+    h2 {
+      margin: 3rem 0 .8rem;
+      font-size: 2.1rem;
+      text-transform: uppercase;
+    }
+    aside {
+      position: sticky;
+      top: 110px;
+      padding: 1.5rem;
+      background: white;
+      border-left: 5px solid var(--red);
+    }
+    aside p { color: #46525d; }
+    .aside-label {
+      color: var(--red);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: .72rem;
+      font-weight: 950;
+    }
+    .quote {
+      margin: 1.8rem 0;
+      padding-top: 1.4rem;
+      border-top: 1px solid var(--paper-line);
+      font-size: 1.25rem;
+      font-weight: 900;
+      line-height: 1.2;
+    }
+    @media (max-width: 800px) {
+      .profile-grid { grid-template-columns: 1fr; }
+      aside { position: static; }
+    }
+  </style>
+</BaseLayout>
