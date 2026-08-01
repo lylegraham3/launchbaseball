@@ -1,0 +1,4 @@
+---
+const { number, title, problem, href } = Astro.props;
+---
+<a class="card" href={href}><span class="num">{number}</span><div><p>{problem}</p><h3>{title}</h3></div><span class="arrow">Read chapter →</span></a><style>.card{min-height:245px;padding:1.35rem;display:flex;flex-direction:column;justify-content:space-between;text-decoration:none;border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.025);transition:.2s}.card:hover{transform:translateY(-5px);border-color:rgba(211,41,47,.7);background:rgba(255,255,255,.05)}.num{color:var(--red);font-weight:950;letter-spacing:.12em}p{margin:0 0 .45rem;color:#8fa0b0;text-transform:uppercase;font-weight:900;letter-spacing:.1em;font-size:.7rem}h3{margin:0;font-size:1.7rem;text-transform:uppercase}.arrow{color:#bbc5cf;font-size:.8rem;font-weight:850}</style>
