@@ -1,0 +1,358 @@
+---
+const pillars = [
+  {
+    number: "05",
+    name: "Adjustability",
+    href: "/learn/adjustability",
+    problem: "Changing pitches",
+    description: "Preserve the foundation while changing the solution for different speeds, locations, and game situations."
+  },
+  {
+    number: "04",
+    name: "Barrel Path",
+    href: "/learn/barrel-path",
+    problem: "Quality contact",
+    description: "Create access to more pitches and a larger window for quality contact when timing is slightly early or late."
+  },
+  {
+    number: "03",
+    name: "Sequence",
+    href: "/learn/sequence",
+    problem: "Coordination",
+    description: "Allow each part of the body to contribute at the right time without competing against the others."
+  },
+  {
+    number: "02",
+    name: "Balance",
+    href: "/learn/balance",
+    problem: "Control",
+    description: "Remain athletic and controlled while movement continues instead of spending the swing recovering from it."
+  },
+  {
+    number: "01",
+    name: "Load",
+    href: "/learn/load",
+    problem: "Preparation",
+    description: "Begin movement and prepare the body to move explosively, efficiently, and under control."
+  }
+];
+---
+
+<div class="foundation-interactive" data-foundation>
+  <div class="foundation-stack" aria-label="The five Launch Baseball movement principles">
+    <div class="ground-up" aria-hidden="true">
+      <span>From the ground up</span>
+      <i></i>
+    </div>
+
+    <div class="pillar-list">
+      {pillars.map((pillar, index) => (
+        <a
+          class:list={["pillar", `pillar-${index + 1}`]}
+          href={pillar.href}
+          data-pillar
+          data-name={pillar.name}
+          data-problem={pillar.problem}
+          data-description={pillar.description}
+          aria-label={`${pillar.name}: ${pillar.problem}. Open chapter.`}
+        >
+          <span class="pillar-number">{pillar.number}</span>
+          <span class="pillar-name">{pillar.name}</span>
+          <span class="pillar-arrow" aria-hidden="true">→</span>
+        </a>
+      ))}
+    </div>
+  </div>
+
+  <div class="foundation-copy" aria-live="polite">
+    <p class="copy-label">One foundation.</p>
+<h3 data-copy-title>Everything builds from it.</h3>
+<p class="copy-problem" data-copy-problem>The five pillars work together—not independently.</p>
+<p class="copy-description" data-copy-description>
+      Hover, focus, or tap a pillar to see the problem it solves. Select it to open the full chapter.
+    </p>
+<a class="copy-link" data-copy-link href="/learn">
+  <div class="foundation-rule"></div>
+
+  <p class="constant">The principles remain constant.</p>
+  <p class="individual">The priorities are individual.</p>
+</a>
+  </div>
+</div>
+
+<script is:inline>
+  (() => {
+    document.querySelectorAll('[data-foundation]').forEach((root) => {
+      const pillars = [...root.querySelectorAll('[data-pillar]')];
+const title = root.querySelector('[data-copy-title]');
+const problem = root.querySelector('[data-copy-problem]');
+const description = root.querySelector('[data-copy-description]');
+const link = root.querySelector('[data-copy-link]');
+      const reset = () => {
+        root.removeAttribute('data-active');
+        pillars.forEach((pillar) => pillar.removeAttribute('data-selected'));
+        title.textContent = 'Everything builds from it.';
+        problem.textContent = 'The five pillars work together—not independently.';
+        description.textContent = 'Hover, focus, or tap a pillar to see the problem it solves. Select it to open the full chapter.';
+        link.textContent = 'Explore the Foundation →';
+        link.setAttribute('href', '/learn');
+      };
+
+      const activate = (pillar) => {
+        root.setAttribute('data-active', '');
+        pillars.forEach((item) => {
+          if (item === pillar) item.setAttribute('data-selected', '');
+          else item.removeAttribute('data-selected');
+        });
+
+        title.textContent = pillar.dataset.name;
+        problem.textContent = `The problem it solves: ${pillar.dataset.problem}.`;
+        description.textContent = pillar.dataset.description;
+        link.textContent = `Read ${pillar.dataset.name} →`;
+        link.setAttribute('href', pillar.getAttribute('href'));
+      };
+
+      pillars.forEach((pillar) => {
+        pillar.addEventListener('mouseenter', () => activate(pillar));
+        pillar.addEventListener('focus', () => activate(pillar));
+      });
+
+      root.addEventListener('mouseleave', reset);
+      root.addEventListener('focusout', (event) => {
+        if (!root.contains(event.relatedTarget)) reset();
+      });
+    });
+  })();
+</script>
+
+<style>
+  .foundation-interactive {
+    display: grid;
+grid-template-columns: minmax(0, 1.25fr) minmax(400px, 1fr);
+    gap: clamp(2rem, 5vw, 5rem);
+    align-items: center;
+    padding: clamp(1.5rem, 4vw, 3.5rem);
+    color: #1f2937;
+    background: #f5f2ea;
+    border: 1px solid rgba(255,255,255,.14);
+    box-shadow: 0 28px 70px rgba(0,0,0,.3);
+  }
+
+  .foundation-stack {
+    display: grid;
+    grid-template-columns: 44px minmax(0, 1fr);
+    gap: 1rem;
+    min-width: 0;
+  }
+
+  .ground-up {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    min-height: 520px;
+  }
+
+  .ground-up span {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    color: #59636f;
+    font-size: .66rem;
+    font-weight: 950;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transform: translateX(-50%) rotate(-90deg);
+    transform-origin: center;
+  }
+
+  .ground-up i {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 8.5rem;
+    width: 2px;
+    border-left: 2px dashed rgba(31,41,55,.42);
+    transform: translateX(-50%);
+  }
+
+  .ground-up i::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -7px;
+    width: 12px;
+    height: 12px;
+    border-top: 2px solid rgba(31,41,55,.62);
+    border-left: 2px solid rgba(31,41,55,.62);
+    transform: rotate(45deg);
+  }
+
+  .pillar-list {
+    display: grid;
+    gap: .7rem;
+  }
+
+  .pillar {
+    min-height: 88px;
+    display: grid;
+    grid-template-columns: 54px minmax(0,1fr) 30px;
+    align-items: center;
+    gap: .8rem;
+    padding: 1rem 1.2rem;
+    color: white;
+    background: #152b5a;
+    border-radius: .4rem;
+    text-decoration: none;
+    overflow: hidden;
+    transition: transform .2s ease, opacity .2s ease, box-shadow .2s ease, background .2s ease;
+  }
+
+  .pillar:nth-child(even) { background: #d62828; }
+
+  .pillar-number {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border: 2px solid rgba(255,255,255,.78);
+    border-radius: 50%;
+    font-size: .76rem;
+    font-weight: 950;
+  }
+
+  .pillar-name {
+    min-width: 0;
+    font-size: clamp(1.15rem, 2.3vw, 2rem);
+    font-weight: 950;
+    letter-spacing: .035em;
+    line-height: 1;
+    text-transform: uppercase;
+    overflow-wrap: anywhere;
+  }
+
+  .pillar-arrow {
+    opacity: .55;
+    font-size: 1.3rem;
+    transition: transform .2s ease, opacity .2s ease;
+  }
+
+  .pillar:hover,
+  .pillar:focus-visible,
+  .pillar[data-selected] {
+transform: translateX(6px) scale(1.06);
+box-shadow: 0 18px 36px rgba(21,43,90,.30);
+    outline: none;
+  }
+
+  .pillar:hover .pillar-arrow,
+  .pillar:focus-visible .pillar-arrow,
+  .pillar[data-selected] .pillar-arrow {
+    opacity: 1;
+    transform: translateX(4px);
+  }
+
+.foundation-interactive[data-active] .pillar:not([data-selected]) {
+  opacity: .80;
+}
+
+  .foundation-copy {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  min-width: 0;
+  padding: clamp(.5rem, 2vw, 1.5rem);
+}
+
+  .copy-label {
+    margin: 0;
+    color: #d62828;
+    font-size: .72rem;
+    font-weight: 950;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+  }
+
+  .foundation-copy h3 {
+  margin: .5rem 0 1.25rem;
+  color: #1f2937;
+  font-size: clamp(2rem, 2.35vw, 2.85rem);
+  line-height: 1;
+  text-transform: uppercase;
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: none;
+  max-width: 100%;
+}
+  }
+
+  .copy-problem {
+    margin: 0 0 .8rem;
+    color: #1f2937;
+    font-size: 1.08rem;
+    font-weight: 900;
+  }
+
+.copy-description {
+  min-height: 5.2rem;
+  margin: 0 0 1.2rem;
+  color: #59636f;
+  font-size: 1rem;
+  max-width: 34rem;
+  line-height: 1.7;
+}
+
+  .copy-link {
+    align-self: flex-start;
+    color: #d62828;
+    font-size: .86rem;
+    font-weight: 950;
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+  }
+
+  .foundation-rule {
+    height: 3px;
+    margin: clamp(2rem, 5vw, 4.5rem) 0 1.2rem;
+    background: #d62828;
+  }
+
+  .constant,
+  .individual {
+    margin: 0;
+    text-transform: uppercase;
+    font-size: clamp(1rem, 1.8vw, 1.35rem);
+    font-weight: 950;
+    letter-spacing: .04em;
+  }
+
+  .individual { color: #d62828; }
+
+  @media (max-width: 850px) {
+    .foundation-interactive { grid-template-columns: 1fr; }
+    .foundation-copy { min-height: 360px; }
+  }
+
+  @media (max-width: 560px) {
+    .foundation-interactive { padding: 1rem; }
+    .foundation-stack { grid-template-columns: 26px minmax(0, 1fr); gap: .5rem; }
+    .ground-up { min-height: 430px; }
+    .ground-up span { font-size: .56rem; }
+    .ground-up i { bottom: 7.2rem; }
+    .pillar {
+      min-height: 72px;
+      grid-template-columns: 40px minmax(0,1fr) 20px;
+      gap: .55rem;
+      padding: .8rem;
+    }
+    .pillar-number { width: 34px; height: 34px; font-size: .66rem; }
+    .pillar-name { font-size: clamp(.92rem, 5vw, 1.3rem); }
+    .foundation-copy { min-height: 330px; padding: .5rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .pillar, .pillar-arrow { transition: none; }
+  }
+</style>
