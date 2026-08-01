@@ -1,4 +1,156 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
-<BaseLayout title="Launch Assessment | Launch Baseball"><main><section class="hero"><div class="container"><p class="eyebrow">The Launch Assessment</p><h1>Leave with a blueprint.</h1><p>The website teaches the principles. The assessment shows how those principles apply to your player.</p></div></section><section class="paper"><div class="container layout"><div><h2>What the player learns</h2><p>What is already working and should be maintained.</p><p>What is currently limiting performance.</p><p>What should be addressed first—and what can wait.</p><p>Which cues and drills fit the player, and why.</p><p>How to recognize progress and self-adjust.</p></div><aside><p class="eyebrow">Player Blueprint</p><h3>Specific to the player.</h3><p>A clear written direction for continued work, including strengths to maintain, the highest-priority limitation, and the next steps.</p></aside></div></section><section class="dark"><div class="container layout"><div><p class="eyebrow">Remote follow-up</p><h2>Coaching does not have to end at the cage.</h2></div><div><p>Using OnForm, players can share video, receive visual analysis, ask questions, and get feedback as they continue working.</p></div></div></section><section class="book" id="book"><div class="container"><p class="eyebrow">Start here</p><h2>Book a Launch Assessment.</h2><p>Scheduling and final pricing are being finalized.</p><a class="button button-primary" href="mailto:info@launchbaseball.net?subject=Launch Assessment Request">Request an Assessment</a></div></section></main><style>.hero{padding:7rem 0 6rem;background:radial-gradient(circle at 75% 20%,rgba(211,41,47,.24),transparent 28%),linear-gradient(135deg,var(--navy),var(--navy2))}.hero h1{margin:.4rem 0 1rem;font-size:clamp(4rem,9vw,8rem);text-transform:uppercase}.hero p:last-child{max-width:760px;color:#bcc7d1;font-size:1.2rem}.paper{padding:7rem 0;background:var(--paper);color:var(--ink)}.layout{display:grid;grid-template-columns:1fr .85fr;gap:5rem}.layout h2{margin-top:0;font-size:clamp(2.7rem,5vw,4.8rem);text-transform:uppercase}.paper p,.dark p{font-size:1.08rem}.paper aside{padding:1.5rem;background:white;border-left:5px solid var(--red)}.paper aside h3{margin:.4rem 0 1rem;font-size:2rem;text-transform:uppercase}.dark{padding:7rem 0;background:#0a213b}.book{padding:7rem 0;text-align:center;background:#06111f}.book p:not(.eyebrow){color:#aebbc7;margin-bottom:2rem}@media(max-width:760px){.layout{grid-template-columns:1fr;gap:2rem}}</style></BaseLayout>
+<BaseLayout title="Launch Assessment | Launch Baseball">
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">The Launch Assessment</p>
+          <h1>Leave with a blueprint.</h1>
+          <p class="lead">
+            The website teaches the principles. The Launch Assessment shows how those principles apply to your player.
+          </p>
+          <a class="button button-primary" href="#book">Request an Assessment</a>
+        </div>
+        <div class="hero-note">
+          <span>01</span>
+          <p>The goal is not to fix everything at once. The goal is to identify the thing holding everything else back.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="why">
+      <div class="container split">
+        <div>
+          <p class="eyebrow">Why start here?</p>
+          <h2>Stop guessing.</h2>
+        </div>
+        <div>
+          <p>A player can work hard for months and still reinforce the wrong thing.</p>
+          <p>The Launch Assessment creates direction before repetition. We identify what is working, what is limiting the player, and what should be addressed first.</p>
+          <p>Not every visible flaw needs immediate correction. Some are byproducts. Some are compensations. Some simply are not the highest priority yet.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="process">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">The Process</p>
+            <h2>Observe. Diagnose. Explain. Build.</h2>
+          </div>
+          <p>Every assessment follows the same Launch process while remaining specific to the player.</p>
+        </div>
+        <div class="step-grid">
+          <article><span>01</span><h3>Observe</h3><p>Watch the player move, swing, adjust, and respond without rushing into correction.</p></article>
+          <article><span>02</span><h3>Diagnose</h3><p>Identify the highest-priority limitation rather than chasing every visible issue.</p></article>
+          <article><span>03</span><h3>Explain</h3><p>Show the player what is happening, why it matters, and how it affects the rest of the swing.</p></article>
+          <article><span>04</span><h3>Build</h3><p>Create a clear next step using the cues, drills, and feedback that fit that player.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="blueprint">
+      <div class="container blueprint-grid">
+        <div>
+          <p class="eyebrow">The Player Blueprint</p>
+          <h2>Specific to the player.</h2>
+          <p>The assessment is the process. The Player Blueprint is what the player leaves with.</p>
+        </div>
+        <div class="blueprint-list">
+          <div><span>Strengths to Maintain</span><p>What is already working and should continue receiving regular maintenance.</p></div>
+          <div><span>Highest Priority</span><p>The issue currently limiting performance the most.</p></div>
+          <div><span>Why It Matters</span><p>How that issue affects contact, power, timing, adjustability, or consistency.</p></div>
+          <div><span>Cues and Drills</span><p>What to work on, how to work on it, and why those choices fit the player.</p></div>
+          <div><span>What Can Wait</span><p>Things that may be imperfect but are not the first problem to solve.</p></div>
+          <div><span>Progress Check</span><p>How the player can recognize improvement and begin self-adjusting.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="foundation-visual">
+      <div class="container">
+        <div class="visual-head">
+          <div>
+            <p class="eyebrow">The Launch Foundation</p>
+            <h2>Everything builds from the ground up.</h2>
+          </div>
+          <p>The principles remain constant. The observations and priorities are individual.</p>
+        </div>
+        <figure>
+          <img src="/images/launch-foundation.svg" alt="The five Launch Baseball pillars stacked from Load through Adjustability." />
+          <figcaption>The Launch Foundation organizes five connected movement principles into one clear system.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="for-who">
+      <div class="container split">
+        <div><p class="eyebrow">Who it is for</p><h2>Players ready for clarity.</h2></div>
+        <div>
+          <p>The Launch Assessment is for players and parents who want more than another hour of random swings and temporary cues.</p>
+          <p>It is especially useful for players who dominate practice but struggle in games, receive conflicting instruction, feel stuck, or simply want to understand their swing at a deeper level.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="followup">
+      <div class="container followup-grid">
+        <div><p class="eyebrow">After the assessment</p><h2>Use the blueprint your way.</h2></div>
+        <div>
+          <p>Continue working independently. Return for purposeful instruction. Or submit video through OnForm for remote review and feedback.</p>
+          <p>The goal is not endless lessons. The goal is continued improvement.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="book" id="book">
+      <div class="container">
+        <p class="eyebrow">Start with clarity</p>
+        <h2>Book a Launch Assessment.</h2>
+        <p>Final session length, availability, and pricing will be confirmed before booking.</p>
+        <a class="button button-primary" href="mailto:info@launchbaseball.net?subject=Launch Assessment Request">Request an Assessment</a>
+      </div>
+    </section>
+  </main>
+
+  <style>
+    .hero{padding:8rem 0 7rem;background:radial-gradient(circle at 78% 24%,rgba(211,41,47,.24),transparent 28%),linear-gradient(135deg,var(--navy),var(--navy-2))}
+    .hero-grid{display:grid;grid-template-columns:1fr 320px;gap:4rem;align-items:end}
+    h1{margin:.5rem 0 1.2rem;max-width:9ch;font-size:clamp(4rem,9vw,8rem);text-transform:uppercase}
+    .lead{max-width:760px;color:#c0cad4;font-size:1.2rem}
+    .hero-note{padding:1.4rem;border-left:4px solid var(--red);background:rgba(4,12,20,.42)}
+    .hero-note span{color:var(--red);font-weight:950;letter-spacing:.12em}
+    .hero-note p{margin-bottom:0;color:#c7d1da}
+    .why,.for-who{padding:7rem 0;background:var(--paper);color:var(--ink)}
+    .split,.followup-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:5rem}
+    h2{margin:.4rem 0 0;font-size:clamp(2.8rem,5vw,5rem);text-transform:uppercase}
+    .split>div:last-child p,.followup-grid>div:last-child p{color:#46525d;font-size:1.1rem}
+    .process,.foundation-visual,.followup{padding:7rem 0;background:#0a213b}
+    .section-head,.visual-head{display:grid;grid-template-columns:1fr .7fr;gap:3rem;align-items:end}
+    .section-head>p,.visual-head>p{color:#9eabb7;font-size:1.05rem}
+    .step-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.9rem;margin-top:3rem}
+    .step-grid article{min-height:260px;padding:1.3rem;border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.025)}
+    .step-grid span{color:var(--red);font-weight:950;letter-spacing:.12em}
+    .step-grid h3{margin:4rem 0 .7rem;font-size:1.8rem;text-transform:uppercase}
+    .step-grid p{color:#9eabb7}
+    .blueprint{padding:7rem 0;background:#f0eee7;color:var(--ink)}
+    .blueprint-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:5rem;align-items:start}
+    .blueprint-grid>div:first-child>p:last-child{color:#52606b;font-size:1.08rem}
+    .blueprint-list{display:grid;gap:.8rem}
+    .blueprint-list div{padding:1.2rem 1.3rem;border-left:4px solid var(--red);background:white}
+    .blueprint-list span{display:block;text-transform:uppercase;font-weight:950;letter-spacing:.06em}
+    .blueprint-list p{margin:.35rem 0 0;color:#52606b}
+    .foundation-visual figure{margin:3rem auto 0;max-width:1100px}
+    .foundation-visual img{display:block;width:100%;height:auto;border:1px solid rgba(255,255,255,.14);box-shadow:0 28px 70px rgba(0,0,0,.3)}
+    .foundation-visual figcaption{margin-top:1rem;text-align:center;color:#8f9eab;font-size:.85rem}
+    .followup-grid>div:last-child p{color:#aeb9c4}
+    .book{padding:7rem 0;text-align:center;background:radial-gradient(circle at 50% 10%,rgba(211,41,47,.22),transparent 32%),#06111f}
+    .book h2{max-width:900px;margin-inline:auto}
+    .book>.container>p:not(.eyebrow){max-width:700px;margin:1.2rem auto 2rem;color:#acb8c3}
+    @media(max-width:900px){.hero-grid,.split,.followup-grid,.section-head,.visual-head,.blueprint-grid{grid-template-columns:1fr;gap:2rem}.hero-note{max-width:500px}.step-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:620px){.step-grid{grid-template-columns:1fr}.button{width:100%}.foundation-visual figure{margin-top:2rem}}
+  </style>
+</BaseLayout>

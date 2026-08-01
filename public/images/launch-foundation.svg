@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+<title id="title">The Launch Foundation</title>
+<desc id="desc">Five stacked movement principles progressing from Load through Adjustability.</desc>
+<style>
+  .bg{fill:#f5f2ea}
+  .navy{fill:#152b5a}
+  .red{fill:#d62828}
+  .charcoal{fill:#1f2937}
+  .muted{fill:#59636f}
+  .white{fill:#fff}
+  .title{font:900 54px Arial,Helvetica,sans-serif;letter-spacing:-1px}
+  .subtitle{font:700 22px Arial,Helvetica,sans-serif;letter-spacing:2px}
+  .step{font:900 34px Arial,Helvetica,sans-serif;letter-spacing:1px}
+  .num{font:900 20px Arial,Helvetica,sans-serif}
+  .body{font:500 21px Arial,Helvetica,sans-serif}
+  .small{font:700 17px Arial,Helvetica,sans-serif;letter-spacing:1.5px}
+</style>
+<rect class="bg" width="1200" height="760"/>
+<text x="70" y="82" class="charcoal title">THE LAUNCH FOUNDATION</text>
+<text x="72" y="122" class="red subtitle">EVERY MOVEMENT CREATES THE NEXT.</text>
+<rect x="70" y="148" width="1060" height="4" class="red"/>
+
+<g transform="translate(85,200)">
+  <rect x="0" y="400" width="480" height="92" rx="8" class="red"/>
+  <circle cx="48" cy="446" r="25" fill="none" stroke="#fff" stroke-width="3"/>
+  <text x="41" y="454" class="white num">1</text>
+  <text x="92" y="458" class="white step">LOAD</text>
+
+  <rect x="34" y="300" width="446" height="92" rx="8" class="navy"/>
+  <circle cx="82" cy="346" r="25" fill="none" stroke="#fff" stroke-width="3"/>
+  <text x="75" y="354" class="white num">2</text>
+  <text x="126" y="358" class="white step">BALANCE</text>
+
+  <rect x="68" y="200" width="412" height="92" rx="8" fill="#aeb0b4"/>
+  <circle cx="116" cy="246" r="25" fill="none" stroke="#fff" stroke-width="3"/>
+  <text x="109" y="254" class="white num">3</text>
+  <text x="160" y="258" class="white step">SEQUENCE</text>
+
+  <rect x="102" y="100" width="378" height="92" rx="8" class="red"/>
+  <circle cx="150" cy="146" r="25" fill="none" stroke="#fff" stroke-width="3"/>
+  <text x="143" y="154" class="white num">4</text>
+  <text x="194" y="158" class="white step">BARREL PATH</text>
+
+  <rect x="136" y="0" width="344" height="92" rx="8" class="navy"/>
+  <circle cx="184" cy="46" r="25" fill="none" stroke="#fff" stroke-width="3"/>
+  <text x="177" y="54" class="white num">5</text>
+  <text x="228" y="58" class="white step">ADJUSTABILITY</text>
+
+  <path d="M20 505 V-10" fill="none" stroke="#1f2937" stroke-width="3" stroke-dasharray="8 9"/>
+  <path d="M20 -10 l-10 18 h20 z" class="charcoal"/>
+  <text x="-5" y="535" class="charcoal small" transform="rotate(-90 -5 535)">BUILDS FROM THE GROUND UP</text>
+</g>
+
+<g transform="translate(650,220)">
+  <text x="0" y="0" class="charcoal subtitle">ONE FOUNDATION.</text>
+  <text x="0" y="42" class="charcoal subtitle">FIVE CONNECTED PRINCIPLES.</text>
+
+  <text x="0" y="105" class="charcoal body">The five pillars are not isolated skills.</text>
+  <text x="0" y="140" class="muted body">Each movement influences what comes next.</text>
+
+  <text x="0" y="205" class="charcoal body">A weakness lower in the chain can create</text>
+  <text x="0" y="240" class="muted body">compensations higher in the swing.</text>
+
+  <text x="0" y="305" class="charcoal body">The goal is not to correct everything.</text>
+  <text x="0" y="340" class="muted body">The goal is to address the highest-priority cause.</text>
+
+  <rect x="0" y="392" width="450" height="4" class="red"/>
+  <text x="0" y="438" class="charcoal subtitle">THE PRINCIPLES REMAIN CONSTANT.</text>
+  <text x="0" y="474" class="red subtitle">THE PRIORITIES ARE INDIVIDUAL.</text>
+</g>
+</svg>
