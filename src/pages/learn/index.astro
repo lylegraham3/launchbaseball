@@ -2,4 +2,195 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ChapterCard from '../../components/ChapterCard.astro';
 ---
-<BaseLayout title="Learn Hitting | Launch Baseball"><main><section class="hero"><div class="container"><p class="eyebrow">Open hitting curriculum</p><h1>Learn the foundation.</h1><p>The principles are not secret. They are organized here so players, parents, and coaches can understand them.</p></div></section><section class="content"><div class="container"><a class="foundation" href="/learn/foundation"><span>Start here</span><h2>Foundation</h2><p>The movement principles shared by successful hitters.</p></a><div class="cards"><ChapterCard number="01" title="Load" problem="Preparation" href="/learn/load"/><ChapterCard number="02" title="Balance" problem="Control" href="/learn/balance"/><ChapterCard number="03" title="Sequence" problem="Coordination" href="/learn/sequence"/><ChapterCard number="04" title="Barrel Path" problem="Quality contact" href="/learn/barrel-path"/><ChapterCard number="05" title="Adjustability" problem="Changing pitches" href="/learn/adjustability"/></div></div></section></main><style>.hero{padding:7rem 0 5rem;background:linear-gradient(135deg,var(--navy),var(--navy2))}h1{margin:.4rem 0 1rem;font-size:clamp(4rem,9vw,8rem);text-transform:uppercase}.hero p:last-child{max-width:720px;color:#b8c4cf;font-size:1.15rem}.content{padding:6rem 0;background:#091d33}.foundation{display:block;padding:2rem;margin-bottom:1rem;text-decoration:none;background:var(--red)}.foundation span{text-transform:uppercase;letter-spacing:.12em;font-size:.7rem;font-weight:950}.foundation h2{margin:.4rem 0;font-size:clamp(2.5rem,5vw,4.5rem);text-transform:uppercase}.foundation p{margin:0}.cards{display:grid;grid-template-columns:repeat(5,1fr);gap:.8rem}@media(max-width:1000px){.cards{grid-template-columns:repeat(2,1fr)}}@media(max-width:700px){.cards{grid-template-columns:1fr}}</style></BaseLayout>
+
+<BaseLayout
+  title="Learn Hitting | Launch Baseball"
+  description="Build a plan, understand swing drift, identify the right problem, and begin the Launch Baseball curriculum."
+>
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <p class="eyebrow">Learn</p>
+        <h1>Do you have a plan?</h1>
+
+        <div class="hero-questions">
+          <p>Where are you today?</p>
+          <p>Where do you want to be next year?</p>
+          <p>Two years from now?</p>
+          <p>Five?</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="goals light">
+      <div class="container two-column">
+        <div>
+          <p class="eyebrow">Every player wants something.</p>
+          <h2>What do you want?</h2>
+        </div>
+
+        <div class="goal-list">
+          <span>More confidence.</span>
+          <span>More doubles.</span>
+          <span>More home runs.</span>
+          <span>A varsity spot.</span>
+          <span>A college opportunity.</span>
+          <span>To get drafted.</span>
+        </div>
+      </div>
+
+      <div class="container question-line">
+        <p>What steps are you taking to get there?</p>
+      </div>
+    </section>
+
+    <section class="problem dark">
+      <div class="container narrow">
+        <p class="eyebrow">Direction matters.</p>
+        <h2>Are you solving the right problem?</h2>
+
+        <div class="question-stack">
+          <p>Are you doing drills specific to your needs?</p>
+          <p>Are you basing decisions on feelings or outcomes?</p>
+          <p>Have you identified the problem?</p>
+          <p>Have you identified its significance?</p>
+          <p>Have you identified its root cause?</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="thoughts light">
+      <div class="container">
+        <p class="eyebrow">Have you ever thought...</p>
+
+        <div class="thought-grid">
+          <blockquote>“I used to hit.”</blockquote>
+          <blockquote>“I wish I hit like that.”</blockquote>
+          <blockquote>“Where does he get that power from?”</blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="changed dark">
+      <div class="container narrow">
+        <p class="eyebrow">So what changed?</p>
+        <h2>Probably more than one thing.</h2>
+
+        <div class="change-grid">
+          <article><span>01</span><p>You got taller.</p></article>
+          <article><span>02</span><p>You got stronger.</p></article>
+          <article><span>03</span><p>You started facing better pitching.</p></article>
+          <article><span>04</span><p>You changed teams or coaches.</p></article>
+          <article><span>05</span><p>You started chasing more power.</p></article>
+          <article><span>06</span><p>You made small adjustments trying to solve another problem.</p></article>
+        </div>
+
+        <div class="change-close">
+          <p>None of those things are unusual.</p>
+          <p>They're part of becoming a better player.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="drift light">
+      <div class="container two-column">
+        <div>
+          <p class="eyebrow">Swing drift</p>
+          <h2>Every season changes you.</h2>
+          <h3>Your swing should change too.</h3>
+        </div>
+
+        <div class="body-copy">
+          <p>Sometimes it does.</p>
+          <p>Sometimes it slowly drifts.</p>
+          <p>Your swing still feels familiar.</p>
+          <p>It just doesn't produce the same results.</p>
+          <p class="emphasis">The challenge isn't knowing that your swing changed. It's knowing what changed.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="diagnosis dark">
+      <div class="container two-column">
+        <div>
+          <p class="eyebrow">How would you know?</p>
+          <h2>The result does not always reveal the cause.</h2>
+        </div>
+
+        <div class="body-copy">
+          <p>A ground ball to third does not automatically mean you rolled over.</p>
+          <p>You may have been early. You may have hit the top of the baseball. You may have created an inefficient path.</p>
+          <p>The outcome may look the same. The cause may be completely different.</p>
+          <p class="emphasis">Before changing the swing, understand what actually happened.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="foundation light">
+      <div class="container">
+        <div class="foundation-head">
+          <div>
+            <p class="eyebrow">A common language</p>
+            <h2>The Five Pillars</h2>
+          </div>
+
+          <p>The Five Pillars are not a single swing model. They are a framework for understanding movement, identifying strengths, and recognizing where a swing may have drifted.</p>
+        </div>
+
+        <a class="foundation-link" href="/learn/foundation">
+          <span>Start here</span>
+          <strong>Foundation</strong>
+          <i aria-hidden="true">→</i>
+        </a>
+
+        <div class="cards">
+          <ChapterCard number="01" title="Load" problem="Preparation" href="/learn/load" />
+          <ChapterCard number="02" title="Balance" problem="Control" href="/learn/balance" />
+          <ChapterCard number="03" title="Sequence" problem="Coordination" href="/learn/sequence" />
+          <ChapterCard number="04" title="Barrel Path" problem="Quality contact" href="/learn/barrel-path" />
+          <ChapterCard number="05" title="Adjustability" problem="Changing pitches" href="/learn/adjustability" />
+        </div>
+      </div>
+    </section>
+
+    <section class="complete-hitter">
+      <div class="container complete-inner">
+        <p class="eyebrow">What comes next?</p>
+        <h2>Developing the complete hitter.</h2>
+        <p class="complete-copy">The Five Pillars build the foundation of the swing. Baseball asks for more.</p>
+
+        <div class="complete-list" aria-label="Complete hitter development topics">
+          <span>Timing</span><span>Contact</span><span>Strength</span><span>Bat speed</span>
+          <span>Approach</span><span>Pitch recognition</span><span>Decision making</span><span>Baseball IQ</span>
+        </div>
+
+        <p class="complete-close">The goal is not to build a prettier swing. The goal is to develop the hitter.</p>
+      </div>
+    </section>
+  </main>
+
+  <style>
+    .hero{min-height:calc(100vh - 74px);display:grid;align-items:center;padding:7rem 0;background:radial-gradient(circle at 82% 18%,rgba(211,41,47,.22),transparent 30%),linear-gradient(135deg,var(--navy),var(--navy2))}
+    .hero-inner{display:grid;gap:2rem}.hero h1{max-width:10ch;margin:0;font-size:clamp(4.5rem,11vw,9rem);text-transform:uppercase}
+    .hero-questions{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;max-width:980px}.hero-questions p{margin:0;padding-top:.85rem;color:#c5ced6;border-top:1px solid rgba(255,255,255,.2);font-size:1rem}
+    .light{background:var(--paper);color:var(--ink)}.dark{background:#0a213b;color:white}
+    .goals,.problem,.thoughts,.changed,.drift,.diagnosis,.foundation,.complete-hitter{padding:clamp(5rem,10vw,9rem) 0}
+    .two-column,.foundation-head{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2rem,7vw,7rem);align-items:start}
+    h2{margin:0;font-size:clamp(3rem,7vw,6.5rem);text-transform:uppercase}
+    .goal-list{display:grid;gap:.6rem;font-size:clamp(1.4rem,2.8vw,2.4rem);font-weight:850}
+    .question-line{margin-top:5rem;padding-top:2rem;border-top:4px solid var(--red)}.question-line p{max-width:900px;margin:0;font-size:clamp(2rem,5vw,4.5rem);font-weight:950;line-height:1;text-transform:uppercase}
+    .narrow{max-width:960px}.problem h2,.diagnosis h2{max-width:10ch}
+    .question-stack{display:grid;gap:.75rem;margin-top:3rem}.question-stack p{margin:0;padding:1rem 0;color:#d6dde3;border-bottom:1px solid rgba(255,255,255,.13);font-size:clamp(1.2rem,2.3vw,1.65rem);font-weight:800}
+    .thought-grid{display:grid;gap:1rem;margin-top:2.5rem}blockquote{margin:0;padding:1.4rem 0;color:var(--ink);border-bottom:1px solid rgba(11,23,35,.18);font-size:clamp(2.4rem,6vw,5rem);font-weight:950;line-height:1;letter-spacing:-.05em;text-transform:uppercase}
+    .change-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem;margin-top:3rem}.change-grid article{min-height:150px;padding:1.2rem;border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.025)}.change-grid span{color:var(--red);font-size:.75rem;font-weight:950;letter-spacing:.15em}.change-grid p{margin:3rem 0 0;font-size:1.2rem;font-weight:850}.change-close{margin-top:3rem;color:#b4bec7;font-size:1.2rem}.change-close p{margin:0}
+    .drift h2{max-width:8ch}.drift h3{max-width:13ch;margin:1.5rem 0 0;color:var(--red);font-size:clamp(2rem,4vw,3.7rem);text-transform:uppercase}
+    .body-copy{display:grid;gap:1rem;color:#56616c;font-size:clamp(1.08rem,2vw,1.35rem)}.dark .body-copy{color:#b4bec7}.body-copy p{margin:0}.emphasis{margin-top:1.4rem!important;padding-left:1.25rem;border-left:4px solid var(--red);color:inherit;font-weight:850}
+    .foundation-head{margin-bottom:2.5rem;align-items:end}.foundation-head>p{margin:0;color:#56616c;font-size:1.08rem}
+    .foundation-link{display:grid;grid-template-columns:auto 1fr auto;gap:1rem;align-items:center;padding:1.4rem;margin-bottom:1rem;background:var(--red);color:white;text-decoration:none}.foundation-link span{text-transform:uppercase;letter-spacing:.12em;font-size:.7rem;font-weight:950}.foundation-link strong{font-size:clamp(2rem,4vw,3.6rem);text-transform:uppercase}.foundation-link i{font-style:normal;font-size:2rem}
+    .cards{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:.8rem}
+    .complete-hitter{color:white;background:radial-gradient(circle at 50% 0%,rgba(211,41,47,.2),transparent 35%),#06111f}.complete-inner{display:grid;justify-items:center;text-align:center}.complete-hitter h2{max-width:11ch}.complete-copy{max-width:720px;margin:1.5rem 0 2rem;color:#aab6c0;font-size:1.2rem}.complete-list{display:flex;flex-wrap:wrap;justify-content:center;gap:.7rem;max-width:880px}.complete-list span{padding:.7rem .9rem;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.035);font-weight:850}.complete-close{max-width:800px;margin:3rem 0 0;font-size:clamp(1.7rem,4vw,3rem);font-weight:950;line-height:1.05;text-transform:uppercase}
+    @media(max-width:1000px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:900px){.hero-questions{grid-template-columns:repeat(2,minmax(0,1fr))}.two-column,.foundation-head{grid-template-columns:1fr}}
+    @media(max-width:700px){.hero{min-height:auto;padding:5rem 0}.hero h1{font-size:clamp(3.25rem,15vw,5rem);overflow-wrap:normal;word-break:normal;hyphens:none}.hero-questions,.change-grid,.cards{grid-template-columns:1fr}.foundation-link{grid-template-columns:1fr auto}.foundation-link span{grid-column:1/-1}}
+  </style>
+</BaseLayout>
