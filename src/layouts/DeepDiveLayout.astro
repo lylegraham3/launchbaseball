@@ -1,0 +1,358 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+const {
+  title,
+  pillar,
+  chapterNumber,
+  nextTitle,
+  nextHref
+} = Astro.props;
+
+const chapters = [
+  { title: "Foundation", href: "/learn/foundation" },
+  { title: "Load", href: "/learn/load" },
+  { title: "Balance", href: "/learn/balance" },
+  { title: "Sequence", href: "/learn/sequence" },
+  { title: "Barrel Path", href: "/learn/barrel-path" },
+  { title: "Adjustability", href: "/learn/adjustability" }
+];
+---
+
+<BaseLayout title={`${title} | Launch Baseball`}>
+  <div class="reading-progress" aria-hidden="true">
+    <div class="reading-progress-bar"></div>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <p class="eyebrow">Chapter {chapterNumber} · Go Deeper</p>
+        <h1>{title}</h1>
+        <p class="hero-copy">
+          A closer look at the principles, techniques, drills, and common
+          problems connected to {pillar}.
+        </p>
+      </div>
+    </section>
+
+    <nav class="chapter-nav" aria-label="Hitting chapters">
+      <div class="container chapter-nav-inner">
+        {chapters.map((chapter) => (
+          <a
+            href={chapter.href}
+            class:list={[
+              "chapter-link",
+              { active: chapter.title === pillar }
+            ]}
+          >
+            {chapter.title}
+          </a>
+        ))}
+      </div>
+    </nav>
+
+    <section class="content">
+      <div class="container content-inner">
+        <article>
+          <slot />
+        </article>
+      </div>
+    </section>
+
+    <section class="continue">
+      <div class="container continue-inner">
+        <p>Continue to Chapter {Number(chapterNumber) + 1}</p>
+
+        <a href={nextHref}>
+          <strong>{nextTitle}</strong>
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <script is:inline>
+    (() => {
+      const bar = document.querySelector('.reading-progress-bar');
+
+      if (!bar) return;
+
+      const updateProgress = () => {
+        const scrollTop =
+          window.scrollY || document.documentElement.scrollTop;
+
+        const scrollable =
+          document.documentElement.scrollHeight - window.innerHeight;
+
+        const progress =
+          scrollable > 0
+            ? Math.min(1, Math.max(0, scrollTop / scrollable))
+            : 0;
+
+        bar.style.transform = `scaleX(${progress})`;
+      };
+
+      updateProgress();
+
+      window.addEventListener('scroll', updateProgress, {
+        passive: true
+      });
+
+      window.addEventListener('resize', updateProgress);
+    })();
+  </script>
+
+  <style>
+    .reading-progress {
+      position: fixed;
+      top: 74px;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      height: 3px;
+      background: rgba(255, 255, 255, 0.08);
+      pointer-events: none;
+    }
+
+    .reading-progress-bar {
+      width: 100%;
+      height: 100%;
+      background: var(--red);
+      transform: scaleX(0);
+      transform-origin: left center;
+      will-change: transform;
+    }
+
+    .hero {
+      padding: clamp(6rem, 10vw, 9rem) 0;
+      background:
+        radial-gradient(
+          circle at 80% 20%,
+          rgba(211, 41, 47, 0.2),
+          transparent 30%
+        ),
+        linear-gradient(135deg, var(--navy), var(--navy-2));
+    }
+
+    .hero h1 {
+      max-width: 12ch;
+      margin: 0.6rem 0 1.5rem;
+      font-size: clamp(4rem, 9vw, 8rem);
+      line-height: 0.9;
+      text-transform: uppercase;
+    }
+
+    .hero-copy {
+      max-width: 720px;
+      margin: 0;
+      color: #b8c4cf;
+      font-size: clamp(1.05rem, 2vw, 1.3rem);
+      line-height: 1.6;
+    }
+
+    .chapter-nav {
+      position: sticky;
+      top: 74px;
+      z-index: 40;
+      background: #06111f;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .chapter-nav-inner {
+      display: flex;
+      gap: 0.35rem;
+      overflow-x: auto;
+      padding-top: 0.55rem;
+      padding-bottom: 0.55rem;
+      scrollbar-width: thin;
+    }
+
+    .chapter-link {
+      flex: 0 0 auto;
+      padding: 0.55rem 0.75rem;
+      color: #9eabb7;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      font-size: 0.7rem;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .chapter-link:hover {
+      color: white;
+    }
+
+    .chapter-link.active {
+      color: var(--red);
+    }
+
+    .content {
+      padding: clamp(5rem, 9vw, 8rem) 0;
+      background: var(--paper);
+      color: var(--ink);
+    }
+
+    .content-inner {
+      max-width: 960px;
+    }
+
+    article {
+      max-width: 780px;
+    }
+
+    article :global(section) {
+      padding: 0 0 4.5rem;
+      margin: 0 0 4.5rem;
+      border-bottom: 1px solid rgba(11, 23, 35, 0.14);
+    }
+
+    article :global(section:last-child) {
+      padding-bottom: 0;
+      margin-bottom: 0;
+      border-bottom: 0;
+    }
+
+    article :global(h2) {
+      margin: 0 0 1.5rem;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      line-height: 0.95;
+      text-transform: uppercase;
+    }
+
+    article :global(h3) {
+      margin: 2.5rem 0 0.75rem;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    article :global(p) {
+      margin: 0 0 1.25rem;
+      color: #3e4a55;
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      line-height: 1.7;
+    }
+
+    article :global(ul) {
+      display: grid;
+      gap: 0.7rem;
+      margin: 1.5rem 0 0;
+      padding-left: 1.25rem;
+      color: #3e4a55;
+      font-size: clamp(1.05rem, 2vw, 1.2rem);
+      line-height: 1.55;
+    }
+
+    article :global(.callout) {
+      margin: 3rem 0;
+      padding: 1.5rem;
+      border-left: 4px solid var(--red);
+      background: white;
+      color: var(--ink);
+      font-size: clamp(1.35rem, 3vw, 2rem);
+      font-weight: 900;
+      line-height: 1.25;
+    }
+
+    article :global(.drill-grid) {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    article :global(.drill-card) {
+      padding: 1.3rem;
+      border: 1px solid rgba(11, 23, 35, 0.14);
+      background: white;
+    }
+
+    article :global(.drill-card h3) {
+      margin-top: 0;
+    }
+
+    article :global(.drill-card p:last-child) {
+      margin-bottom: 0;
+    }
+
+    .continue {
+      padding: clamp(4rem, 8vw, 7rem) 0;
+      background: #06111f;
+      color: white;
+    }
+
+    .continue-inner {
+      max-width: 760px;
+    }
+
+    .continue p {
+      margin: 0 0 1rem;
+      color: #8f9ba7;
+      font-size: 0.75rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .continue a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      padding: 1.4rem;
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      text-decoration: none;
+      transition:
+        transform 200ms ease,
+        border-color 200ms ease,
+        background-color 200ms ease;
+    }
+
+    .continue strong {
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      text-transform: uppercase;
+    }
+
+    .continue span {
+      font-size: 1.8rem;
+      transition: transform 200ms ease;
+    }
+
+    .continue a:hover {
+      transform: translateY(-4px);
+      border-color: var(--red);
+      background: rgba(211, 41, 47, 0.08);
+    }
+
+    .continue a:hover strong,
+    .continue a:hover span {
+      color: var(--red);
+    }
+
+    .continue a:hover span {
+      transform: translateX(5px);
+    }
+
+    @media (max-width: 700px) {
+      article :global(.drill-grid) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .continue a,
+      .continue span {
+        transition: none;
+      }
+
+      .continue a:hover,
+      .continue a:hover span {
+        transform: none;
+      }
+    }
+  </style>
+</BaseLayout>
